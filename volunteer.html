@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HelpHub – Volunteer Now</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">HelpHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="charities.html">Charities</a></li>
+      <li><a href="volunteer.html">Volunteer Now</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="volunteer-form">
+      <h1>Volunteer Sign-Up</h1>
+      <p>Join us in making an impact!</p>
+      <form action="#" method="post">
+        <label>Charity:
+          <input type="text" name="charity" value="Charity Name" readonly>
+        </label>
+        <label>Location:
+          <input type="text" name="location" value="Town, ST" readonly>
+        </label>
+        <label>Name:
+          <input type="text" name="name" required>
+        </label>
+        <label>Email:
+          <input type="email" name="email" required>
+        </label>
+        <label>Phone:
+          <input type="tel" name="phone">
+        </label>
+        <fieldset>
+          <legend>Availability:</legend>
+          <label><input type="checkbox" name="avail" value="weekdays"> Weekdays</label>
+          <label><input type="checkbox" name="avail" value="weekends"> Weekends</label>
+          <label><input type="checkbox" name="avail" value="evenings"> Evenings</label>
+        </fieldset>
+        <label>Comments:
+          <textarea name="comments" rows="3"></textarea>
+        </label>
+        <button type="submit">Submit Volunteer Info</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="about">
+    <p>© 2025 HelpHub  •  <a href="#">Contact</a>  •  <a href="#">Privacy</a></p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
 
