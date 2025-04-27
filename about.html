@@ -1,41 +1,47 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HelpHub – Charity Profile</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HelpHub – About Charities</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">>
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="logo">HelpHub</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="charities.html">Charities</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="volunteer.html">Volunteer Now</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">HelpHub</a>
+      <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="charity_list.html">Charity List</a></li>
+        <li><a href="about_charities.html">About Charities</a></li>
+        <li><a href="volunteer.html">Volunteer Now</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <section class="charity-header">
-      <img src="assets/img/banner.jpg" alt="Banner image">
-      <h1>Charity Name</h1>
-      <p>Town, ST • Cause Type</p>
-    </section>
-
-    <section class="charity-info">
-      <h2>About This Charity</h2>
-      <p>Long description / mission statement…</p>
-      <a href="volunteer.html" class="btn">Volunteer Now →</a>
+    <section class="about-charities">
+      <article id="feeding-america" class="about-box">
+        <h2>Feeding America</h2>
+        <p>Feeding America is the largest hunger-relief organization in the U.S., leading a network of over 200 food banks to provide meals to millions each year.</p>
+        <a href="volunteer.html" class="btn">Volunteer Now</a>
+      </article>
+      <article id="american-red-cross" class="about-box">
+        <h2>American Red Cross</h2>
+        <p>The American Red Cross provides emergency assistance, disaster relief, and education in the United States, supporting communities during crises.</p>
+        <a href="volunteer.html" class="btn">Volunteer Now</a>
+      </article>
+      <article id="habitat-for-humanity" class="about-box">
+        <h2>Habitat for Humanity</h2>
+        <p>Habitat for Humanity helps families around the world build or improve a place they can call home, partnering with communities for strength.</p>
+        <a href="volunteer.html" class="btn">Volunteer Now</a>
+      </article>
     </section>
   </main>
 
-  <footer id="about">
-    <p>© 2025 HelpHub  •  <a href="#">Contact</a>  •  <a href="#">Privacy</a></p>
+  <footer>
+    <p>Contact and socials</p>
   </footer>
-
-  <script src="assets/js/app.js"></script>
 </body>
 </html>
-
