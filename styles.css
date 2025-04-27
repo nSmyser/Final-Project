@@ -1,207 +1,168 @@
-/* 1. Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* styles.css */
 
-/* 2. CSS Variables for easy theming */
+/* 1. CSS Variables for color palette */
 :root {
-  --primary-color: #2a9d8f;
-  --secondary-color: #264653;
-  --accent-color: #e9c46a;
-  --bg-color: #f9f9f9;
-  --text-color: #333333;
-  --link-color: var(--primary-color);
+  --primary-color: #2a9d8f;    
+  --secondary-color: #264653;  
+  --accent-color: #e9c46a;     
+  --light-bg: #f0f4f8;         
+  --text-color: #333333;       
+  --btn-bg: var(--primary-color);
+  --btn-hover: var(--secondary-color);
   --border-radius: 0.5rem;
   --transition-speed: 0.3s;
 }
 
-/* 3. Global Resets & Base Styles */
-*,
-*::before,
-*::after {
+/* 2. Global Reset and Base */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--light-bg);
   color: var(--text-color);
-  background-color: var(--bg-color);
   line-height: 1.6;
-  min-height: 100vh;
 }
 
-/* 4. Utility Classes */
 a {
-  color: var(--link-color);
+  color: var(--primary-color);
   text-decoration: none;
+  transition: color var(--transition-speed);
 }
+
 a:hover,
 a:focus {
+  color: var(--secondary-color);
+}
+
+/* 3. Header & Nav */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+nav a {
+  color: #fff;
+  font-weight: 500;
+}
+nav a:hover,
+nav a:focus {
   text-decoration: underline;
 }
 
+/* 4. Hero / Welcome */
+.welcome {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+}
+.welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.welcome .intro-box {
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+  background: rgba(255,255,255,0.9);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+/* 5. Buttons */
 .btn {
   display: inline-block;
-  background-color: var(--primary-color);
+  background-color: var(--btn-bg);
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--border-radius);
-  cursor: pointer;
-  font-weight: 700;
-  transition: background-color var(--transition-speed);
+  font-weight: 600;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 .btn:hover,
 .btn:focus {
-  background-color: var(--secondary-color);
+  background-color: var(--btn-hover);
+  transform: translateY(-2px);
 }
 
-/* 5. Header & Navigation */
-header {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--secondary-color);
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-.nav-links a {
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  transition: background-color var(--transition-speed);
-}
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: rgba(42, 157, 143, 0.1);
-}
-
-/* 6. Hero Section */
-.hero {
-  background-color: var(--accent-color);
-  color: #fff;
+/* 6. Featured Charities */
+.featured-charities {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
-.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-}
-
-/* 7. Main Content Sections */
-main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-/* Featured Charities Grid */
-.featured-charities .charity-cards,
-.charity-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.charity-cards {
+  display: flex;
+  justify-content: center;
   gap: 1.5rem;
-  margin-top: 1rem;
+  flex-wrap: wrap;
 }
-
-/* Card Component */
-.card {
+.charity-card {
   background-color: #fff;
   border-radius: var(--border-radius);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 280px;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
-.card img {
-  width: 100%;
-  height: auto;
+.charity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
-.card h3 {
-  margin: 1rem 0 0.5rem;
-  font-size: 1.25rem;
-}
-.card p {
-  flex-grow: 1;
-  padding: 0 1rem;
-  font-size: 0.95rem;
-}
-.card .btn {
-  margin: 1rem;
-}
-
-/* 8. Search & Filter Form */
-.search-filter form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-}
-.search-filter input[type="text"],
-.search-filter select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
-  flex: 1 1 200px;
-}
-.search-filter button {
-  padding: 0.5rem 1rem;
-}
-
-/* 9. Charity Profile */
-.charity-header img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-}
-.charity-header h1 {
-  margin: 1rem 0 0.5rem;
-  font-size: 2rem;
-}
-.charity-info {
-  margin-top: 1.5rem;
-}
-.charity-info h2 {
-  font-size: 1.5rem;
+.charity-card h3 {
   margin-bottom: 0.5rem;
 }
 
-/* 10. Volunteer Form */
-.volunteer-form {
+/* 7. Charity List & About Sections */
+.charity-list,
+.about-charities {
+  padding: 2rem 1rem;
+}
+.charity-list .charity-box,
+.about-charities .about-box {
   background-color: #fff;
-  padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.about-box h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* 8. Volunteer Form */
+.volunteer-form {
   max-width: 600px;
   margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .volunteer-form h1 {
   margin-bottom: 1rem;
-  font-size: 1.75rem;
+  text-align: center;
 }
 .volunteer-form p {
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 .volunteer-form form {
   display: grid;
@@ -210,35 +171,40 @@ main {
 .volunteer-form label {
   display: flex;
   flex-direction: column;
-  font-size: 0.95rem;
+  font-weight: 500;
 }
 .volunteer-form input,
 .volunteer-form textarea {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: var(--border-radius);
-  font: inherit;
 }
-.volunteer-form fieldset {
+.fieldset {
   border: none;
-  padding: 0;
   margin: 0;
-}
-.volunteer-form legend {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  padding: 0;
 }
 
-/* 11. Footer */
+/* 9. Footer */
 footer {
+  text-align: center;
+  padding: 1.5rem 0;
   background-color: var(--secondary-color);
   color: #fff;
-  text-align: center;
-  padding: 1rem;
   margin-top: 2rem;
 }
 footer a {
   color: #fff;
   margin: 0 0.5rem;
+  font-weight: 500;
 }
 
+/* 10. Responsive */
+@media (max-width: 768px) {
+  .charity-cards,
+  .charity-list,
+  .about-charities {
+    flex-direction: column;
+    align-items: center;
+  }
+}
