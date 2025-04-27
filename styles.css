@@ -104,7 +104,9 @@ nav a:focus {
 
 /* 6. Featured Charities */
 .featured-charities {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   padding: 2rem 1rem;
 }
 .charity-cards {
